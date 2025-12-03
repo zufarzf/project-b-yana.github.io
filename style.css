@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  background: linear-gradient(45deg, #483650, #1f1f1f);
+  /* background: linear-gradient(45deg, #D585FF, #00FFEE); */
+  height: 100vh;
+}
+
+.card {
+  width: 426px;
+  height: 551px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.front,
+.back {
+  /* padding: 5px; */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.front {
+  transform: perspective(600px) rotateY(0);
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: auto;
+}
+
+.back {
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.card.active .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.card.active .back {
+  transform: perspective(600px) rotateY(0);
+}
