@@ -13,7 +13,9 @@
 
 .card {
   width: 426px;
-  height: 551px;
+  /* height: 551px; */
+  max-height: 700px;
+  height: 100%;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -60,4 +62,5 @@
 
 .card.active .back {
   transform: perspective(600px) rotateY(0);
+
 }
